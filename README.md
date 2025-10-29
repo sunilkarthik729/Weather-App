@@ -28,7 +28,7 @@ API Used
 ------------
 Open-Meteo Weather API
 ------------------------
-Provides real-time and forecast weather data based on latitude and longitude.\
+Provides real-time and forecast weather data based on latitude and longitude.
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Project Structure
 
