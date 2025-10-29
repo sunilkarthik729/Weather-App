@@ -1,13 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* --- Animated Background Effects --- */
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply bg-[#0a0f1e] text-white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Cloud Gradient Movement */
+@keyframes cloudMove {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-10%, -10%) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes cloudMove2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(10%, 5%) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes cloudMove3 {
+  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+  50% { transform: translate(-5%, 10%) scale(1.1); opacity: 0.6; }
+  100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+}
+
+.animate-cloudMove {
+  animation: cloudMove 40s ease-in-out infinite;
+}
+.animate-cloudMove2 {
+  animation: cloudMove2 55s ease-in-out infinite;
+}
+.animate-cloudMove3 {
+  animation: cloudMove3 70s ease-in-out infinite;
+}
+
+/* Floating Particles */
+@keyframes floatParticle {
+  0%, 100% { transform: translateY(0); opacity: 0.2; }
+  50% { transform: translateY(-25px); opacity: 0.6; }
+}
+.animate-floatParticle {
+  animation: floatParticle 12s ease-in-out infinite;
+}
+
+/* Floating Icons (optional) */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientMove 10s ease infinite;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.7s ease-out;
+}
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animate-spin-slow {
+  animation: spin-slow 5s linear infinite;
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
 }
